@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <conio.h>
-
 #define C 20
+
 
 
 typedef struct
@@ -19,12 +19,7 @@ void mostrarPersona(eIndividuo[],int);
 void mostrarGente(eIndividuo);
 void ordenarPersona(eIndividuo[],int);
 int buscarEspacio(eIndividuo[],int);
-typedef struct
-{
-    int edad;
-} eGrafico;
-eGrafico crearGraf(int);
-void grafico(eGrafico[],int);
+
 
 
 int main()
@@ -32,7 +27,7 @@ int main()
     eIndividuo gente[C];
     inicializarIndiv(gente,C);
     char seguir='s';
-    int opcion,posicion,flagCapacidad,auxInt;
+    int opcion,posicion,flagCapacidad,auxInt,flagExiste=0;
     char nombre[30],respuesta;
     int dni, edad;
 
@@ -87,6 +82,7 @@ int main()
                 if(gente[i].estado==1 &&auxInt == gente[i].dni)
                 {
 
+                    flagExiste=1;
                     mostrarGente(gente[i]);
 
                     printf("Esta seguro de dar de baja? s/n\n");
@@ -107,7 +103,13 @@ int main()
                     flagCapacidad=1;
                     break;
                 }
+
+
             }
+            if(flagExiste==0)
+                {
+                    printf("no se encontro el dni.\n");
+                }
             break;
         case 3:
             ordenarPersona(gente,C);

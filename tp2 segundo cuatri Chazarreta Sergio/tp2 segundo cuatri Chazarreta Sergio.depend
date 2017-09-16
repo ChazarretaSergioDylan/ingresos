@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1505566755 source:c:\users\alumno\desktop\tp2 segundo cuatri chazarreta sergio\funciones.c
+
+1505576230 source:c:\users\alumno\desktop\tp2 segundo cuatri chazarreta sergio\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+
